@@ -1,0 +1,47 @@
+/* import the google API font */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+*,
+*::before,
+*::after {
+  /* supress browser defaults and select alt box model */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif, Tahoma;
+  /* set variables for colors */
+  --bg-primary: var(#4d9de0);
+  --bg-secondary: var(#e15554);
+  --font-color-primary: var(#e1bc29);
+  --font-color-seconday: var(#3bb273);
+  --backup-color: var(#7768ae);
+}
+
+/* this styling is desktop first */
+body {
+  height: 100vh;
+  background: var(--bg-primary);
+}
+
+/* style the header / navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px; /* might need change on screen used to develop */
+  padding: 0 50px;
+}
+
+/* style the children of the hader */
+.navbar h2 {
+  color: var(--font-color-primary);
+  font-weight: 700;
+}
+
+.navbar nav ul {
+  display: flex; /* double check to use align items and justify-content property */
+}
+
+.navbar ul li {
+  list-style: none;
+}
