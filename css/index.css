@@ -1,0 +1,627 @@
+/* import the google api font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&display=swap");
+
+* {
+  /* supress browser defaults and select alt box model */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif, Tahoma;
+  /* set variables for colors */
+  --bg-primary: #5c9ead;
+  --bg-secondary: #ffffff;
+  --font-color-primary: #326273;
+  --font-color-secondary: #eeeeee;
+  --backup-color: #e39774;
+}
+
+/* this styling is desktop first */
+body {
+  height: 100vh;
+  background: var(--bg-primary);
+}
+
+/* style the header / navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px; /*might need change based on screen used to develop*/
+  padding: 0 50px;
+}
+
+/* style the children of the header  */
+.navbar h2 {
+  color: var(--font-color-primary);
+  font-weight: 700;
+}
+
+.navbar nav ul {
+  display: flex; /*double check to use align items and justify content prop*/
+}
+
+.navbar ul li {
+  list-style: none;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: var(--font-color-secondary);
+  font-size: 16px; /*shazam~~subjective*/
+  margin-right: 25px; /*shazam*/
+  transition: color 0.3 ease; /*animation must be triggered by an event*/
+}
+
+/* the event that triggers line 54 and specify outcome of transition */
+.navbar ul li:hover a {
+  color: var(--font-color-primary);
+}
+
+/* remove the margin of the rightmost list item : see line 53 */
+.navbar ul li:last-child a {
+  margin-right: 0;
+}
+
+/* style of the hire me btn */
+.hire-btn {
+  background: var(--backup-color);
+  color: var(--font-color-primary);
+  padding: 6px 16px; /*shazam*/
+  border: none;
+  font-size: 16px; /*shazam*/
+  cursor: pointer;
+  border-radius: 6px; /*shazam*/
+  transition: background 0.3s ease;
+}
+
+.hire-btn:hover {
+  background: var(--font-color-secondary);
+  color: var(--bg-primary);
+}
+
+/* styling the hero section */
+.main {
+  height: 640px; /*shazam*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /*space-between or space-evenly or space-around*/
+}
+
+.main h4 {
+  font-size: 32px; /*shazam*/
+  color: var(--font-color-primary);
+  font-weight: 600;
+}
+
+.main h4 span {
+  color: var(--font-color-secondary);
+  text-decoration: underline;
+}
+
+.main p.title {
+  font-size: 44px;
+  font-weight: 600;
+  color: var(--font-color-primary);
+  margin-top: 8px; /*shazam*/
+}
+
+.main p.subtitle {
+  font-size: 16px;
+  color: var(--font-color-primary);
+  margin-top: 20px;
+}
+
+.main img {
+  width: 250px;
+  height: auto;
+  /*max-width, max-height, min-width, min-height*/
+  margin-top: 40px;
+  border-radius: 65%;
+}
+
+.main blockquote.title {
+  font-size: 32px; /* Reduce font size for a more balanced look */
+  font-weight: 600;
+  color: var(--font-color-secondary);
+  margin-top: 20px; /* Adjust the top margin */
+  line-height: 1.2; /* Adjust line height for better readability */
+}
+.main blockquote.subtitle {
+  font-size: 20px; /* Reduce font size for a more balanced look */
+  font-weight: 400; /* Use a lighter font weight for a more subtle appearance */
+  color: var(--font-color-primary);
+  margin-top: 10px; /* Adjust the top margin */
+  line-height: 1.4; /* Adjust line height for better readability */
+}
+
+/* style the services assurance sub section after hero section  */
+.services-assurance {
+  margin-top: 50px;
+  padding: 0 50px;
+  display: flex;
+  /*align-items, and justify-content*/
+  flex-wrap: nowrap;
+  gap: 24px;
+}
+
+.services-assurance .item {
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 0 30px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/*
+.services-assurance .item:hover {
+  border-color: var(--font-color-primary);
+}
+
+.services-assurance .item .icon {
+  width: 46px;
+  height: 46px;
+  background: var(--font-color-secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.services-assurance .item:hover .icon {
+  background: var(--font-color-primary);
+}
+
+.services-assurance .item .icon i {
+  font-size: 30px;
+}
+
+.services-assurance .item .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly; 
+}
+
+.services-assurance .item .info h3 {
+  color: var(--font-color-secondary);
+  font-size: 28px;
+}
+
+.services-assurance .item .info p {
+  color: var(--font-color-primary);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.services-assurance .item > i {
+  color: var(--bg-primary);
+  font-size: 30px;
+  transition: color 0.3s ease;
+}
+
+.services-assurance .item:hover > i {
+  color: var(--font-color-primary);
+} 
+
+/* style the section separator titles */
+.section-separator-title {
+  margin: 50px 50px 30px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.08); /*opacity: 0.08*/
+  display: inline-block;
+  color: var(--font-color-secondary);
+  border-radius: 12px;
+  font-size: 20px;
+}
+
+/* about me section styling  */
+.about-me {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  padding: 0 50px;
+}
+
+.about-me img {
+  width: 300px; /*you can use rest of the css property from the previous image styling*/
+}
+
+.info-about-me {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  padding: 0 50px;
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--font-color-primary);
+}
+.info-about-me span a {
+  margin-top: 30px;
+  color: var(--backup-color);
+}
+
+.about-me .info h3 {
+  color: var(--backup-color);
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.about-me .info p {
+  color: var(--font-color-primary);
+  font-size: 14px;
+}
+
+.about-me .info button {
+  margin-top: 30px;
+}
+
+/* styling the skills section */
+/* .skills 
+        .left
+          .info
+            h3
+            p
+            .hire-btn
+        .right
+          .item>i*12    
+  */
+.skills {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 50px;
+}
+
+.skills span {
+  color: var(--font-color-secondary);
+}
+
+.skills .left {
+  width: 680px;
+}
+
+.skills .left label {
+  color: var(--font-color-primary);
+}
+.skills .left span {
+  color: var(--font-color-primary);
+}
+
+.skills .left .progress-bar-left {
+  /* Remove default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+  /* Set dimensions */
+  /*width: 100%;
+  height: 20px;*/
+}
+
+.skills .left .progress-bar-left::-webkit-progress-bar {
+  background-color: var(--bg-secondary); /* Background color of the empty bar */
+  border-radius: 5px; /* Optional: for rounded edges */
+}
+
+.skills .left .progress-bar-left::-webkit-progress-value {
+  background-color: var(
+    --backup-color
+  ); /* Color of the filled part of the bar */
+  border-radius: 5px; /* Optional: for rounded edges */
+}
+
+/* .skills .left .info button{
+    margin-top: 30px;
+  } */
+
+.skills .right {
+  width: 420px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skills .right label {
+  color: var(--font-color-primary);
+}
+.skills .right span {
+  color: var(--font-color-primary);
+}
+
+.skills .right .progress-bar-right {
+  /* Remove default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+  /* Set dimensions */
+  /*width: 100%;
+  height: 20px;*/
+}
+
+.skills .right .progress-bar-right::-webkit-progress-bar {
+  background-color: var(--bg-secondary); /* Background color of the empty bar */
+  border-radius: 5px; /* Optional: for rounded edges */
+}
+
+.skills .right .progress-bar-right::-webkit-progress-value {
+  background-color: var(
+    --backup-color
+  ); /* Color of the filled part of the bar */
+  border-radius: 5px; /* Optional: for rounded edges */
+}
+
+/* style the footer */
+footer {
+  position: relative;
+  background: var(--bg-secondary);
+  padding: 80px 50px 40px;
+  margin-top: 100px;
+}
+
+footer .start {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute; /*position is absolute, relative to parent node: footer*/
+  background-color: var(--font-color-secondary);
+  padding: 30px 25px;
+  border-radius: 15px;
+  width: 70%;
+  top: -16%;
+  left: 15%;
+}
+
+footer .start h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--font-color-primary);
+}
+
+footer .start p {
+  font-size: 13px;
+  width: 35%;
+  color: var(--font-color-primary);
+}
+
+footer .start button {
+  background: transparent;
+  border: 1px solid var(--bg-primary);
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  color: var(--font-color-primary);
+}
+
+footer .start button:hover {
+  background-color: var(--backup-color);
+  border-color: var(--bg-primary);
+}
+
+footer .cols {
+  display: flex;
+  align-items: flex-start;
+}
+
+footer .cols .copyright-col {
+  flex: 2; /*controls the starting width of a flex item*/
+}
+
+footer .cols .copyright-col h3 {
+  color: var(--font-color-primary);
+  margin-bottom: 20px;
+}
+
+footer .cols .copyright-col p {
+  color: var(--bg-primary);
+  font-size: 15px;
+}
+
+footer .cols .links-col {
+  flex: 3;
+}
+
+footer .cols p {
+  color: var(--bg-primary);
+  font-size: 15px;
+}
+
+footer .cols .links-col h4 {
+  color: var(--font-color-primary);
+  margin-bottom: 20px;
+}
+
+footer .cols .links-col a {
+  display: block;
+  text-decoration: none;
+  color: var(--bg-primary);
+  font-size: 14px;
+  line-height: 26px;
+  transition: color 0.3s ease;
+}
+
+footer .cols .links-col a:hover {
+  color: var(--font-color-secondary);
+}
+
+/* BEGIN styling for CSS responsive web design 
+    responsive web design is implemented using 
+    css media queries concept (similar to what if-else statements do)
+*/
+@media screen and (max-width: 1100px) {
+  /* write the changes to the css that needs to be done if you hit this checkpoints */
+  .services-assurance {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .services-assurance .item {
+    flex-basis: 49%;
+  }
+
+  .skills {
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .skills .left {
+    width: 500px;
+  }
+
+  .skills .left .info h3 {
+    font-size: 22px;
+  }
+
+  .skills .left .info p {
+    font-size: 12px;
+  }
+
+  /* Navbar adjustments */
+  .navbar {
+     flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .navbar h2 {
+     flex-wrap: wrap;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .navbar nav ul {
+     flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar .hire-btn {
+     flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  /* Main section adjustments */
+  .main {
+     flex-wrap: wrap;
+    padding: 40px 20px; /* Add padding to create spacing from the header */
+    display: flex;
+    flex-direction: column;
+    align-items: flex;
+    text-align: flex;
+    gap: 15px; /* Add consistent spacing between elements */
+  }
+
+  .main h4 {
+     flex-wrap: wrap;
+    display: flex;
+    flex-direction: flex;
+    align-items: flex;
+    text-align: flex;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .main p.title {
+     flex-wrap: wrap;
+    font-size: 32px;
+    margin-top: 5px;
+  }
+
+  .main p.subtitle {
+     flex-wrap: wrap;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .main img {
+    width: 150px; /* Smaller image size for better layout */
+    margin-top: 15px;
+    border-radius: 10%; /* Smaller radius for cleaner look */
+  }
+
+  .main blockquote.title {
+    font-size: 20px;
+    margin-top: 20px;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .main blockquote.subtitle {
+    font-size: 16px;
+    margin-top: 10px;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  /* About Me section */
+  .about-me {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .about-me img {
+    width: 180px; /* Smaller size for responsive view */
+  }
+
+  .info-about-me span {
+    font-size: 12px;
+  }
+
+  /* Footer adjustments */
+  /* footer */
+  footer {
+     flex-wrap: wrap;
+    margin-top: 150px; /* Adjust margin for smaller screens */
+  }
+
+  footer .start {
+     flex-wrap: wrap;
+    top: -20%; /* Adjust vertical position */
+    width: 90%;
+    left: 5%;
+  }
+
+  footer .cols {
+    flex-wrap: wrap;
+    gap: 20px; /* Add gap between columns */
+  }
+
+  footer .cols .copyright-col,
+  footer .cols .links-col {
+     flex-wrap: wrap;
+    flex-basis: 50%; /* Make columns full width */
+  }
+
+  footer .cols .links-col h4 {
+    display: block; /* Show headings again on very small screens */
+  }
+}
+
+@media screen and (max-width: 780px) {
+  /* changes */
+}
+
+@media screen and (max-width: 650px) {
+  /* changes */
+}
+
+@media screen and (max-width: 480px) {
+  /* changes */
+}

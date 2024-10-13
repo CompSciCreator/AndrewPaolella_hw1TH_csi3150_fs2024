@@ -7,7 +7,7 @@
     <!-- import for boxicons -->
     <link rel="icon" href="../assets/img/favicon.ico" />
     <!--link for your custom css file -->
-    <link rel=""stylesheet" href="./css/portfolio-style.css">
+    <link rel="stylesheet" href="../css/AboutMe.css" />
   </head>
   <body>
     <header class="navbar">
@@ -21,19 +21,22 @@
           <li><a href="../html/AboutMe-page.html">About Me</a></li>
         </ul>
       </nav>
+      <!-- call to action -->
+      <button class="hire-btn">Hire Me</button>
     </header>
 
     <!--End of Header -->
     <!-- Start of main -->
     <main>
       <!-- Start of favorite book -->
-      <section class="Favorite-book">
-        <div class="Book-Title">
-          <h2>My Favorite Book: 12 Rules for Life</h2>
+      <div class="favorite-book">
+        <div class="book-title">
+          <h2 class="section-separator-title">My Favorite Book:</h2>
+          <span>12 Rules for Life</span>
           <img
             src="../assets/img/book-cover.jpg"
             alt="12 Rules for Life by Jordan Peterson Book Cover"
-            width="200"
+            width="150"
           />
           <!--<p class="title">Author: Jordan Peterson</p>-->
           <p>
@@ -46,7 +49,7 @@
             >
           </p>
           <!--<span>Description:</span>-->
-          <p>
+          <p class="title">
             I love this book because it provides great advice about life,
             structured in a way that encourages personal responsibility.
             Offering rules organised around the idea of fighting the chaos that
@@ -58,10 +61,9 @@
           </p>
         </div>
         <!-- start of Favorite track section -->
-        <div class="Favorite-Track">
-          <h2>
-            My Favorite Audio Track: Jazz is for ordinary people by Berlioz
-          </h2>
+        <div class="favorite-track">
+          <h2 class="section-separator-title">My Favorite Audio Track:</h2>
+          <span>Jazz is for ordinary people by Berlioz</span>
           <img
             src="../assets/img/album-cover.jpg"
             alt="album cover"
@@ -85,11 +87,11 @@
             alt="Your browser doesn't support this audio type"
           ></audio>
         </div>
-        <br />
         <!-- end of favorite track section -->
         <!-- start of favorite series section -->
-        <div class="Favorite-series">
-          <h2>My Favorite Series: KillTony</h2>
+        <div class="favorite-series">
+          <h2 class="section-separator-title">My Favorite Series:</h2>
+          <span>KillTony</span>
 
           <iframe
             width="560"
@@ -101,6 +103,7 @@
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
           ></iframe>
+          <br>
           <p>
             KillTony is a comedy show where aspiring comedians perform short
             sets and get hilarious feedback from Tony Hinchcliffe and his
@@ -110,34 +113,30 @@
         </div>
         <br />
         <!--end of favorite series section -->
-      </section>
+      </div>
       <!-- End of section-->
       <!-- End of Main-->
     </main>
     <!-- start of footer -->
     <footer>
-      <hr />
       <br />
 
-      <div class="copyright-col">
-        <h4>AP Ventures LLC</h4>
-        <span>2024 © Andrew Paolella</span>
-      </div>
-
       <div class="start">
-        <h4>Start a New Project Journey ?</h4>
+        <h3>Start a New Project Journey ?</h3>
         <p>
           With my professional skillset, I am excited to help bring your ideas
-          to life. Whether you're looking to build a new application, enhance
-          your IT infrastructure, or secure your systems, I'm here to offer
-          expert solutions. Let's collaborate together and make your project a
-          success.
+          to life. Let's collaborate together and make your project a success.
         </p>
         <button>Get in Touch</button>
       </div>
 
-      <!-- Footer Columns for socials and nav repeats / call to actions -->
+      <!-- Footer columns for socials and nav repeats / call to actions -->
       <div class="cols">
+        <div class="copyright-col">
+          <h3>AP Ventures LLC</h3>
+          <p>2024 © Andrew Paolella</p>
+        </div>
+
         <div class="links-col">
           <h4>Useful Links</h4>
           <a href="../index.html">Home</a>
@@ -146,8 +145,8 @@
         </div>
 
         <div class="links-col">
-          <p>Email: andrewpaolella@example.com</p>
           <h4>Social Media</h4>
+          <p>andrewpaolella@example.com</p>
           <a href="#">LinkedIn</a>
         </div>
       </div>
