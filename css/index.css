@@ -1,390 +1,265 @@
-/* import the google api font */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&display=swap");
-
 * {
-  /* supress browser defaults and select alt box model */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif, Tahoma;
-  /* set variables for colors */
-  --bg-primary: #5c9ead;
-  --bg-secondary: #ffffff;
-  --font-color-primary: #326273;
-  --font-color-secondary: #eeeeee;
-  --backup-color: #e39774;
+  font-family: "Merriweather", Arial, Helvetica, sans-serif;
+  --font-color-primary: #ffffff;
+  --font-color-secondary: #edf2f4;
+  --backup-font-color: #000000;
+
+  --background-color-primary: #c5d1eb;
+  --background-color-secondary: #92afd7;
+  --backup-background-primary: #5a7684;
+  --backup-background-secondary: #395b50;
+
+  line-height: 1.6;
 }
 
-/* this styling is desktop first */
-body {
-  height: 100vh;
-  background: var(--bg-primary);
+.hero h1 {
+  font-size: 3em;
+  margin: 0;
 }
 
-/* style the header / navbar */
-.navbar {
+/* start of header section styling */
+
+header {
+  height: 530px; /* Set the height of the header element to 560 pixels */
+
+  background-color: var(--backup-background-secondary);
+  background-size: cover; /* Cover the entire background area with the image */
+  background-position: center; /* Center the background image */
+}
+
+header img {
   display: flex;
+
+  transform-origin: center center;
+  position: absolute;
+  border-radius: 100%;
+  width: 10%;
+  height: 20%;
+  transform: translateX(440%) translateY(50px);
+
+  background-color: white; /* Add this line */
+  padding: 5px; /* Add padding for some space around the image */
+}
+
+header .hero {
+  display: flex; /* Enable flexbox layout for the .hero class */
+  flex-direction: column; /* Arrange elements vertically within the .hero container */
+
+  /* Center items both vertically and horizontally within the .hero container */
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  height: 80px; /*might need change based on screen used to develop*/
-  padding: 0 50px;
+
+  height: 70%; /* Set the height of the .hero container to 70% of the header's height */
+  text-align: center; /* Center text within the .hero container */
+  transform: translateY(10%);
 }
 
-/* style the children of the header  */
-.navbar h2 {
+header #title {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase; /* Convert text to uppercase */
+  text-align: center; /* Center text horizontally */
+  font-weight: 400; /* Set font weight to 400 (normal weight) */
+  font-size: 3rem; /* Set font size to 3rem */
+  margin-bottom: 4px; /* Add bottom margin */
   color: var(--font-color-primary);
-  font-weight: 700;
+  display: flex; /* Enable flexbox layout for the #title element */
+  flex-direction: column; /* Arrange elements vertically within the #title element */
+  justify-content: center; /* Center items vertically within the #title element */
+  letter-spacing: 2px; /* Add letter spacing */
+  height: 50%; /* Set the height of the #title element to 100% */
 }
 
-.navbar nav ul {
-  display: flex; /*double check to use align items and justify content prop*/
-}
-
-.navbar ul li {
-  list-style: none;
-}
-
-.navbar ul li a {
-  text-decoration: none;
+header #subtitle {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase; /* Convert text to uppercase */
+  text-align: center; /* Center text horizontally */
   color: var(--font-color-secondary);
-  font-size: 16px; /*shazam~~subjective*/
-  margin-right: 25px; /*shazam*/
-  transition: color 0.3 ease; /*animation must be triggered by an event*/
+  letter-spacing: 2px; /* Add letter spacing */
+  font-weight: 400; /* Set font weight to 400 (normal weight) */
+  font-size: 1.25rem; /* Set font size to 1.25rem */
 }
 
-/* the event that triggers line 54 and specify outcome of transition */
-.navbar ul li:hover a {
-  color: var(--font-color-primary);
+/* end of header */
+
+/* start of hero section styling */
+
+/* Shared styles for dynamically loaded sections */
+.about-section,
+.education-section,
+.experience-section {
+  padding: 40px 375px;
+  margin: auto;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  border-radius: none;
 }
 
-/* remove the margin of the rightmost list item : see line 53 */
-.navbar ul li:last-child a {
-  margin-right: 0;
+.about-section h2,
+.education-section h2,
+.experience-section h2 {
+  margin-top: 60px;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 5px;
+  margin-bottom: 5px;
+  background-color: rgb(255, 255, 255);
 }
 
-/* style of the hire me btn */
-.hire-btn {
-  background: var(--backup-color);
-  color: var(--font-color-primary);
-  padding: 6px 16px; /*shazam*/
+.content-details p {
+  font-size: 1rem;
+  color: #666;
+  margin: 10px 0;
+}
+
+.content-details h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Separator line styling */
+hr.solid {
+  border-radius: 5px;
+  border: none; /* Removes any border */
+  border-top: 5px solid #5a7684; /* Adds the desired top border */
+  margin: 0; /* Removes any default margin */
+  width: 5%; /* Adjust the width as needed */
+  width: fit-content;
+}
+
+/* Styling for button container */
+.button-container {
+  position: absolute;
+  margin-top: 20px; /* Add space between content and buttons */
+  display: flex;
+  flex-direction: row; /* Stack buttons vertically */
+  gap: 15px; /* Add space between buttons */
+  align-items: center; /* Center buttons horizontally within the container */
+  justify-content: center;
+
+  bottom: -21%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+}
+
+/* Styling for circular buttons */
+.circle-button {
+  width: 20px;
+  height: 20px;
+  background-color: var(--backup-background-secondary);
   border: none;
-  font-size: 16px; /*shazam*/
-  cursor: pointer;
-  border-radius: 6px; /*shazam*/
-  transition: background 0.3s ease;
-}
-
-.hire-btn:hover {
-  background: var(--font-color-secondary);
-  color: var(--bg-primary);
-}
-
-/* styling the hero section */
-.main {
-  height: 640px; /*shazam*/
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; /*space-between or space-evenly or space-around*/
-}
-
-.main h4 {
-  font-size: 32px; /*shazam*/
-  color: var(--font-color-primary);
-  font-weight: 600;
-}
-
-.main h4 span {
-  color: var(--font-color-secondary);
-  text-decoration: underline;
-}
-
-.main p.title {
-  font-size: 44px;
-  font-weight: 600;
-  color: var(--font-color-primary);
-  margin-top: 8px; /*shazam*/
-}
-
-.main p.subtitle {
-  font-size: 16px;
-  color: var(--font-color-primary);
-  margin-top: 20px;
-}
-
-.main img {
-  width: 250px;
-  height: auto;
-  /*max-width, max-height, min-width, min-height*/
-  margin-top: 40px;
-  border-radius: 65%;
-}
-
-.main blockquote.title {
-  font-size: 32px; /* Reduce font size for a more balanced look */
-  font-weight: 600;
-  color: var(--font-color-secondary);
-  margin-top: 20px; /* Adjust the top margin */
-  line-height: 1.2; /* Adjust line height for better readability */
-}
-.main blockquote.subtitle {
-  font-size: 20px; /* Reduce font size for a more balanced look */
-  font-weight: 400; /* Use a lighter font weight for a more subtle appearance */
-  color: var(--font-color-primary);
-  margin-top: 10px; /* Adjust the top margin */
-  line-height: 1.4; /* Adjust line height for better readability */
-}
-
-/* style the services assurance sub section after hero section  */
-.services-assurance {
-  margin-top: 50px;
-  padding: 0 50px;
-  display: flex;
-  /*align-items, and justify-content*/
-  flex-wrap: nowrap;
-  gap: 24px;
-}
-
-.services-assurance .item {
-  background: var(--bg-secondary);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100px;
-  width: 100%;
-  border-radius: 10px;
-  padding: 0 30px;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-/*
-.services-assurance .item:hover {
-  border-color: var(--font-color-primary);
-}
-
-.services-assurance .item .icon {
-  width: 46px;
-  height: 46px;
-  background: var(--font-color-secondary);
   border-radius: 50%;
-  display: flex;
-  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.circle-button:hover {
+  background-color: var(--backup-background-primary);
+  transform: scale(1.1);
+}
+
+/* end of hero section styling */
+/* start of skills stying */
+
+.skills-section {
+  padding: 40px 375px; /* Set padding around the section */
+  margin: auto; /* Center the section horizontally */
+  height: 660px; /* Set the height of the section */
+  background-color: rgba(50, 49, 136, 0.2);
+  flex-direction: column; /* Center items vertically within the section */
   justify-content: center;
-  transition: background 0.3s ease;
+  align-items: center; /* Center items horizontally within the section */
+  text-align: center; /* Center text within the section */
+  display: flex; /* Enable flexbox layout for the section */
+  background-color: var(--background-color-secondary);
 }
 
-.services-assurance .item:hover .icon {
-  background: var(--font-color-primary);
-}
-
-.services-assurance .item .icon i {
-  font-size: 30px;
-}
-
-.services-assurance .item .info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly; 
-}
-
-.services-assurance .item .info h3 {
-  color: var(--font-color-secondary);
-  font-size: 28px;
-}
-
-.services-assurance .item .info p {
-  color: var(--font-color-primary);
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.services-assurance .item > i {
-  color: var(--bg-primary);
-  font-size: 30px;
-  transition: color 0.3s ease;
-}
-
-.services-assurance .item:hover > i {
-  color: var(--font-color-primary);
-} 
-
-/* style the section separator titles */
-.section-separator-title {
-  margin: 50px 50px 30px;
-  padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.08); /*opacity: 0.08*/
-  display: inline-block;
-  color: var(--font-color-secondary);
-  border-radius: 12px;
-  font-size: 20px;
-}
-
-/* about me section styling  */
-.about-me {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 80px;
-  padding: 0 50px;
-}
-
-.about-me img {
-  width: 300px; /*you can use rest of the css property from the previous image styling*/
-}
-
-.info-about-me {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 80px;
-  padding: 0 50px;
-  font-weight: bold;
-  font-size: 14px;
-  color: var(--font-color-primary);
-}
-.info-about-me span a {
-  margin-top: 30px;
-  color: var(--backup-color);
-}
-
-.about-me .info h3 {
-  color: var(--backup-color);
-  font-size: 32px;
-  font-weight: 600;
-  margin-top: 10px;
-}
-
-.about-me .info p {
-  color: var(--font-color-primary);
-  font-size: 14px;
-}
-
-.about-me .info button {
-  margin-top: 30px;
-}
-
-/* styling the skills section */
-/* .skills 
-        .left
-          .info
-            h3
-            p
-            .hire-btn
-        .right
-          .item>i*12    
-  */
 .skills {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 0 50px;
+  margin-bottom: 135px;
+  display: flex; /* Enable flexbox layout for the skills container */
+  flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
+  gap: 20px; /* Add space between items */
+  justify-content: space-around; /* Distribute space evenly between items */
 }
 
-.skills span {
-  color: var(--font-color-secondary);
-}
-
-.skills .left {
-  width: 680px;
-}
-
-.skills .left label {
-  color: var(--font-color-primary);
-}
-.skills .left span {
-  color: var(--font-color-primary);
-}
-
-.skills .left .progress-bar-left {
-  /* Remove default appearance */
-  -webkit-appearance: none;
-  appearance: none;
-  /* Set dimensions */
-  /*width: 100%;
-  height: 20px;*/
-}
-
-.skills .left .progress-bar-left::-webkit-progress-bar {
-  background-color: var(--bg-secondary); /* Background color of the empty bar */
-  border-radius: 5px; /* Optional: for rounded edges */
-}
-
-.skills .left .progress-bar-left::-webkit-progress-value {
+.item {
+  /* Define the flex-grow, flex-shrink, and flex-basis properties */
+  flex: 1 1 calc(25% - 20px);
+  border: none; /* Add a border to the item */
+  padding: 20px; /* Add padding inside the item */
+  text-align: center; /* Center text within the item */
+  border-radius: 8px; /* Add rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
   background-color: var(
-    --backup-color
-  ); /* Color of the filled part of the bar */
-  border-radius: 5px; /* Optional: for rounded edges */
+    --background-color-primary
+  ); /* Set the background color */
+  color: rgb(255, 255, 255); /* Set the text color to white */
+  font-size: 3rem; /* Set the font size */
+  width: 420px; /* Set the width of the item */
+  height: 120px; /* Set the height of the item */
 }
 
-/* .skills .left .info button{
-    margin-top: 30px;
-  } */
-
-.skills .right {
-  width: 420px;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.skills .right label {
-  color: var(--font-color-primary);
-}
-.skills .right span {
-  color: var(--font-color-primary);
-}
-
-.skills .right .progress-bar-right {
-  /* Remove default appearance */
-  -webkit-appearance: none;
-  appearance: none;
-  /* Set dimensions */
-  /*width: 100%;
-  height: 20px;*/
-}
-
-.skills .right .progress-bar-right::-webkit-progress-bar {
-  background-color: var(--bg-secondary); /* Background color of the empty bar */
-  border-radius: 5px; /* Optional: for rounded edges */
-}
-
-.skills .right .progress-bar-right::-webkit-progress-value {
-  background-color: var(
-    --backup-color
-  ); /* Color of the filled part of the bar */
-  border-radius: 5px; /* Optional: for rounded edges */
-}
-
-/* style the footer */
-footer {
-  position: relative;
-  background: var(--bg-secondary);
-  padding: 80px 50px 40px;
+.left {
   margin-top: 100px;
+  width: 20px; /* Set the width of the '.left' class */
+  text-transform: uppercase; /* Convert text to uppercase */
+  font-size: 1.5rem; /* Set font size to 3rem */
+  margin-bottom: 4px; /* Add bottom margin */
+  color: var(--font-color-primary);
+  display: flex; /* Enable flexbox layout for the #title element */
+  flex-direction: column; /* Arrange elements vertically within the #title element */
+  letter-spacing: 5px; /* Add letter spacing */
 }
 
-footer .start {
+/* Solid border */
+hr.solid {
+  border-radius: 5px;
+  border: none; /* Removes any border */
+  border-top: 5px solid #5a7684; /* Adds the desired top border */
+  margin: 0; /* Removes any default margin */
+  width: 5%; /* Adjust the width as needed */
+}
+
+/* end of skills section */
+/* start of footer */
+
+footer {
+  height: 60vh;
+  background-color: var(--backup-background-secondary);
   display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  /*
+    align-items: center;
+    */
+  padding: 7% 7%;
+  background-position: cover;
+  background-size: 140%;
+}
+
+.start {
+  position: absolute;
+  display:flex;
   align-items: center;
   justify-content: space-around;
-  position: absolute; /*position is absolute, relative to parent node: footer*/
-  background-color: var(--font-color-secondary);
-  padding: 30px 25px;
+  position: absolute; /* position is absolute relative to the parent which is the footer itself */
+  background-color: var(--backup-background-primary);
+  padding: 2px 25px;
   border-radius: 15px;
   width: 70%;
-  top: -16%;
-  left: 15%;
+  height: 8%;
+  top: 202%;
+  left: 15%; /* adjusting absolute positioning values relative to the parent i.e. the footer*/
 }
 
-footer .start h3 {
-  font-size: 22px;
-  font-weight: 600;
+footer .start h4 {
   color: var(--font-color-primary);
 }
 
@@ -396,232 +271,65 @@ footer .start p {
 
 footer .start button {
   background: transparent;
-  border: 1px solid var(--bg-primary);
+  border: 1px solid var(--font-color-primary);
   cursor: pointer;
   padding: 8px 20px;
-  border-radius: 50px;
+  border-radius: 100px;
   transition: all 0.3s ease;
-  color: var(--font-color-primary);
+}
+
+footer button {
+  color: var(--backup-font-color);
 }
 
 footer .start button:hover {
-  background-color: var(--backup-color);
-  border-color: var(--bg-primary);
+  background-color: var(--font-color-primary);
 }
 
-footer .cols {
-  display: flex;
-  align-items: flex-start;
+footer .left-side {
+  width: 50%;
+  justify-content: center;
+  align-items: center; /* Center items horizontally within the section */
+  text-align: center; /* Center text within the section */
 }
 
-footer .cols .copyright-col {
-  flex: 2; /*controls the starting width of a flex item*/
-}
+footer h5 {
+  letter-spacing: 2px; /* Add letter spacing */
 
-footer .cols .copyright-col h3 {
+  font-weight: 400;
+  font-size: 4.5rem;
+  margin-bottom: 3%;
   color: var(--font-color-primary);
-  margin-bottom: 20px;
 }
 
-footer .cols .copyright-col p {
-  color: var(--bg-primary);
-  font-size: 15px;
-}
-
-footer .cols .links-col {
-  flex: 3;
-}
-
-footer .cols p {
-  color: var(--bg-primary);
-  font-size: 15px;
-}
-
-footer .cols .links-col h4 {
-  color: var(--font-color-primary);
-  margin-bottom: 20px;
-}
-
-footer .cols .links-col a {
-  display: block;
-  text-decoration: none;
-  color: var(--bg-primary);
-  font-size: 14px;
-  line-height: 26px;
-  transition: color 0.3s ease;
-}
-
-footer .cols .links-col a:hover {
+footer p {
   color: var(--font-color-secondary);
+  
+  
 }
 
-/* BEGIN styling for CSS responsive web design 
-    responsive web design is implemented using 
-    css media queries concept (similar to what if-else statements do)
-*/
-@media screen and (max-width: 1100px) {
-  /* write the changes to the css that needs to be done if you hit this checkpoints */
-  .services-assurance {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
+footer .left-side .socials {
+  margin-top: 8%;
+    letter-spacing: 2px; /* Add letter spacing */
 
-  .services-assurance .item {
-    flex-basis: 49%;
-  }
-
-  .skills {
-    justify-content: space-between;
-    gap: 20px;
-  }
-
-  .skills .left {
-    width: 500px;
-  }
-
-  .skills .left .info h3 {
-    font-size: 22px;
-  }
-
-  .skills .left .info p {
-    font-size: 12px;
-  }
-
-  /* Navbar adjustments */
-  .navbar {
-     flex-wrap: wrap;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-  }
-
-  .navbar h2 {
-     flex-wrap: wrap;
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-
-  .navbar nav ul {
-     flex-wrap: wrap;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .navbar .hire-btn {
-     flex-wrap: wrap;
-    margin-top: 10px;
-  }
-
-  /* Main section adjustments */
-  .main {
-     flex-wrap: wrap;
-    padding: 40px 20px; /* Add padding to create spacing from the header */
-    display: flex;
-    flex-direction: column;
-    align-items: flex;
-    text-align: flex;
-    gap: 15px; /* Add consistent spacing between elements */
-  }
-
-  .main h4 {
-     flex-wrap: wrap;
-    display: flex;
-    flex-direction: flex;
-    align-items: flex;
-    text-align: flex;
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-
-  .main p.title {
-     flex-wrap: wrap;
-    font-size: 32px;
-    margin-top: 5px;
-  }
-
-  .main p.subtitle {
-     flex-wrap: wrap;
-    font-size: 14px;
-    margin-top: 10px;
-  }
-
-  .main img {
-    width: 150px; /* Smaller image size for better layout */
-    margin-top: 15px;
-    border-radius: 10%; /* Smaller radius for cleaner look */
-  }
-
-  .main blockquote.title {
-    font-size: 20px;
-    margin-top: 20px;
-    line-height: 1.4;
-    text-align: center;
-  }
-
-  .main blockquote.subtitle {
-    font-size: 16px;
-    margin-top: 10px;
-    line-height: 1.4;
-    text-align: center;
-  }
-
-  /* About Me section */
-  .about-me {
-    flex-direction: column;
-    gap: 30px;
-    text-align: center;
-    padding: 0 20px;
-  }
-
-  .about-me img {
-    width: 180px; /* Smaller size for responsive view */
-  }
-
-  .info-about-me span {
-    font-size: 12px;
-  }
-
-  /* Footer adjustments */
-  /* footer */
-  footer {
-     flex-wrap: wrap;
-    margin-top: 150px; /* Adjust margin for smaller screens */
-  }
-
-  footer .start {
-     flex-wrap: wrap;
-    top: -20%; /* Adjust vertical position */
-    width: 90%;
-    left: 5%;
-  }
-
-  footer .cols {
-    flex-wrap: wrap;
-    gap: 20px; /* Add gap between columns */
-  }
-
-  footer .cols .copyright-col,
-  footer .cols .links-col {
-     flex-wrap: wrap;
-    flex-basis: 50%; /* Make columns full width */
-  }
-
-  footer .cols .links-col h4 {
-    display: block; /* Show headings again on very small screens */
-  }
 }
 
-@media screen and (max-width: 780px) {
-  /* changes */
+footer a {
+  text-decoration: none;
+  color: var(--font-color-secondary);
+  transition: color 0.3s ease;
+
 }
 
-@media screen and (max-width: 650px) {
-  /* changes */
+footer .left-side .socials a:hover {
+  color: var(--background-color-primary);
 }
 
-@media screen and (max-width: 480px) {
-  /* changes */
+footer .left-side .socials a i {
+  font-size: 2rem;
+  
 }
+
+/* end of footer styling */
+
+/* start of media styling */
