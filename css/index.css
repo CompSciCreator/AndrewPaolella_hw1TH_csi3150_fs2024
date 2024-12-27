@@ -32,16 +32,16 @@ header {
 
 header img {
   display: flex;
-
   transform-origin: center center;
   position: absolute;
   border-radius: 100%;
   width: 10%;
   height: 20%;
   transform: translateX(440%) translateY(50px);
-
   background-color: white; /* Add this line */
   padding: 5px; /* Add padding for some space around the image */
+
+
 }
 
 header .hero {
@@ -90,12 +90,14 @@ header #subtitle {
 .about-section,
 .education-section,
 .experience-section {
-  padding: 40px 375px;
+  padding: 2rem;
   margin: auto;
   height: 500px;
   display: flex;
+  width: 800px; /* Set a maximum width for better control */
   flex-direction: column;
   border-radius: none;
+
 }
 
 .about-section h2,
@@ -128,24 +130,22 @@ hr.solid {
   border-top: 5px solid #5a7684; /* Adds the desired top border */
   margin: 0; /* Removes any default margin */
   width: 5%; /* Adjust the width as needed */
-  width: fit-content;
 }
 
 /* Styling for button container */
 .button-container {
-  position: absolute;
+  position:absolute;
   margin-top: 20px; /* Add space between content and buttons */
-  display: flex;
+  display:flex;
   flex-direction: row; /* Stack buttons vertically */
   gap: 15px; /* Add space between buttons */
   align-items: center; /* Center buttons horizontally within the container */
   justify-content: center;
-
-  bottom: -21%;
+  top: 950px;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
   gap: 20px;
+
 }
 
 /* Styling for circular buttons */
@@ -245,41 +245,48 @@ footer {
 }
 
 .start {
-  position: absolute;
+  
+  position:absolute;
   display:flex;
   align-items: center;
-  justify-content: space-around;
-  position: absolute; /* position is absolute relative to the parent which is the footer itself */
+  justify-content:space-around;
   background-color: var(--backup-background-primary);
-  padding: 2px 25px;
+  padding: 2rem;
   border-radius: 15px;
   width: 70%;
-  height: 8%;
-  top: 202%;
+  height: 10%;
+  top: 200%;
   left: 15%; /* adjusting absolute positioning values relative to the parent i.e. the footer*/
+
+
+
 }
 
 footer .start h4 {
   color: var(--font-color-primary);
+  text-align: center; /* Center the heading */
+
 }
 
 footer .start p {
   font-size: 13px;
   width: 35%;
   color: var(--font-color-primary);
+  text-align: center; /* Center the heading */
 }
 
 footer .start button {
-  background: transparent;
   border: 1px solid var(--font-color-primary);
   cursor: pointer;
   padding: 8px 20px;
   border-radius: 100px;
   transition: all 0.3s ease;
+  text-align: center; /* Center the heading */
 }
 
 footer button {
   color: var(--backup-font-color);
+  text-align: center; /* Center the heading */
 }
 
 footer .start button:hover {
@@ -304,7 +311,6 @@ footer h5 {
 
 footer p {
   color: var(--font-color-secondary);
-  
   
 }
 
@@ -333,3 +339,13 @@ footer .left-side .socials a i {
 /* end of footer styling */
 
 /* start of media styling */
+
+
+@media (max-width: 768px) { 
+  /* Styles for smaller screens */
+  .about-section,
+  .education-section,
+  .experience-section {
+    padding: 1rem; 
+  }
+}
